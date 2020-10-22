@@ -13,11 +13,13 @@ class Category extends Model
 
         $sql = new Sql();
 
-        return $sql->select("SELECT DISTINCT tab1.*, tab3.idstore FROM tb_categories tab1
-        INNER JOIN tb_Productscategories tab2
-        ON tab1.idcategory = tab2.idcategory
-        INNER JOIN tb_Products tab3
-        ON tab2.idproduct = tab3.idproduct");
+        return $sql->select("SELECT * FROM tb_categories");
+
+        // return $sql->select("SELECT DISTINCT tab1.*, tab3.idstore FROM tb_categories tab1
+        // INNER JOIN tb_Productscategories tab2
+        // ON tab1.idcategory = tab2.idcategory
+        // INNER JOIN tb_Products tab3
+        // ON tab2.idproduct = tab3.idproduct");
 
     }
 
@@ -102,9 +104,9 @@ class Category extends Model
         if($related === true)
         {
             
-            return $sql->select("SELECT * FROM tb_Products WHERE idproduct IN(
-                    SELECT a.idproduct FROM tb_Products a 
-                    INNER JOIN tb_Productscategories b 
+            return $sql->select("SELECT * FROM tb_products WHERE idproduct IN(
+                    SELECT a.idproduct FROM tb_products a 
+                    INNER JOIN tb_productscategories b 
                     ON a.idproduct = b.idproduct 
                     WHERE b.idcategory = :idcategory);
                  ", [
@@ -115,9 +117,9 @@ class Category extends Model
         else
         {
 
-            return $sql->select("SELECT * FROM tb_Products WHERE idproduct NOT IN(
-                SELECT a.idproduct FROM tb_Products a 
-                INNER JOIN tb_Productscategories b 
+            return $sql->select("SELECT * FROM tb_products WHERE idproduct NOT IN(
+                SELECT a.idproduct FROM tb_products a 
+                INNER JOIN tb_productscategories b 
                 ON a.idproduct = b.idproduct 
                 WHERE b.idcategory = :idcategory);
                 ", [

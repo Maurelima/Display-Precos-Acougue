@@ -136,7 +136,7 @@ $app->get("/admin/categories/:idcategory/products", function($idcategory){
 	$category->get((int)($idcategory));
 
 	$page = new PageAdmin();
-
+	
 	$page->setTpl("categories-products", [
 		"category"=>$category->getValues(),
 		"productsRelated"=>$category->getProducts(),

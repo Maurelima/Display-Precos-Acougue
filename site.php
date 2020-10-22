@@ -14,10 +14,13 @@ $app->get('/', function () {
 		"header"=>null
 	]);
 
+	 // var_dump(Product::listAll());
+	 // exit;
+
 	$page->setTpl("index", [
-		"categories"=>"",
-		"Products"=>"",
-		"store"=>""
+		"categories"=>Category::listAll(),
+		"products"=>Product::listAll(),
+		"promotion"=>Product::listPromotion()
 	]);
 });
 

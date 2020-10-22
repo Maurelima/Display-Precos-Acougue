@@ -13,13 +13,14 @@ class Product extends Model
 
         $sql = new Sql();
 
-        return $sql->select("SELECT tab1.*, tab2.idcategory FROM tb_products tab1
+        return $sql->select("SELECT * FROM tb_products tab1
         INNER JOIN tb_productscategories tab2
-        ON tab1.idproduct = tab2.idproduct");
+        ON tab1.idproduct = tab2.idproduct
+        WHERE tab2.idcategory != 1 ORDER by tab2.idcategory ASC");
 
     }
 
-    public static function listByStore($idstore)
+    public static function listPromotion()
     {
 
         $sql = new Sql();
@@ -27,8 +28,8 @@ class Product extends Model
         return $sql->select("SELECT tab1.*, tab2.idcategory FROM tb_products tab1
         INNER JOIN tb_productscategories tab2
         ON tab1.idproduct = tab2.idproduct
-        WHERE idstore = :idstore", array(
-            "idstore"=>$idstore
+        WHERE idcategory = :idcategory", array(
+            "idcategory"=>1
         ));
         
     }

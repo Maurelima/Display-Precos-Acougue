@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tabela de Preços</title>
     <link rel="stylesheet" href="/res/acougue/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="/res/acougue/assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body style="margin: 0px !important;">
     
@@ -18,9 +20,11 @@
         /*background-position: center;*/
         background-repeat: no-repeat;
         background-size: cover;
+        overflow: hidden;
       }
         #products td{
-            font-size: 23px ;
+            font-size: 50px ;
+            line-height: 55px;
             font-weight: bolder;
             font-family: 'Poppins', sans-serif;
             color: #FFF;
@@ -30,65 +34,88 @@
            text-align:center;
            color: #FFF;
         }
-        #products th{
+        #products .first{
           font-family: 'Poppins', sans-serif;
-          
+          width: 90%;
+          font-size: 50px;
+          background-color: rgba(0, 0, 0, 0.7) !important;
+          color:rgb(255, 196, 86);
         }
     </style>
 
 <div class="container-fluid">
     <div class="row">
+
+      <div class="col-md-6" >
+        <h5 class="card-title promo-title" style="margin-top:45px;background-color: rgba(0, 0, 0, 0.7) !important;
+        text-align:center;border-radius: 5px;">PROMOÇÃO DO DIA</h5>
+        <div class="card" style="width: 100%;margin-top: 0px;">
+          <div class="card-body" id="card-animation">
+            <h5 class="card-title" id="promo-title">PROMOÇÕES</h5><hr>
+            <img class="card-img-top" id="promo-img" src="res/site/img/product.jpg" onerror="this.onerror=null; this.src='/res/site/img/product.jpg'"><br>
+            <h5 class="card-price" id="promo-price"></h5>
+          </div>
+        </div>
+      </div> 
+      
         <div class="col-md-6">
-            <table class="table table-borderless" id="products" style="margin-top: 200px;border-collapse:separate; 
+          <h5 class="card-title promo-title" id="table-cat" style="margin-top:45px;background-color: rgba(0, 0, 0, 0.7) !important;
+          text-align:center;border-radius: 5px;">TABELA DE PREÇOS</h5>
+            <table class="table table-borderless" id="products" style="border-collapse:separate; 
             border-spacing:10px 15px;background-color: rgba(0, 0, 0, 0.5);border-radius: 5px;">
-                <thead >
-                  <tr style="line-height: 20px;">
-                    <th scope="col" style="width: 90%;font-size: 23px;background-color: rgba(0, 0, 0, 0.7) !important;color:rgb(255, 196, 86);">Costela KG</th>
-                    <th scope="col" style="font-size: 25px;background-color: rgba(0, 0, 0, 0.7) !important;color:rgb(255, 255, 255);text-align:center;">23.90</th>
-                  </tr>
-                </thead>
                 <tbody>
                     
-                  <tr style="line-height: 20px;"> 
-                    <td>Contra Filé</td>
-                    <td class="price">12.90</td>
-                  </tr>
-                  <tr style="line-height: 20px;">
-                    <td>Coxão Duro</td>
-                    <td class="price">24.50</td>
-                  </tr>
-                  <tr style="line-height: 20px;">
-                    <td>Coxão Mole</td>
-                    <td class="price">45.60</td>
-                  </tr>
-                  <tr style="line-height: 20px;"> 
-                    <td>Alcatra</td>
-                    <td class="price">10.80</td>
-                  </tr>
-                  <tr style="line-height: 20px;">
-                    <td>Fraldinha</td>
-                    <td class="price">15.95</td>
-                  </tr>
-                  <tr style="line-height: 20px;">
-                    <td>Músculo</td>
-                    <td class="price">22.40</td>
-                  </tr>
-                  <tr style="line-height: 20px;"> 
-                    <td>Lagarto</td>
-                    <td class="price">17.79</td>
-                  </tr>
-                  <tr style="line-height: 20px;">
-                    <td>Costela</td>
-                    <td class="price">99.99</td>
-                  </tr>
-                  <tr style="line-height: 20px;">
-                    <td>Maçã de peito</td>
-                    <td class="price">150.49</td>
-                  </tr>                
+                  <tr> 
+                    <td>Display itens</td>
+                    <td class="price">00.00</td>
+                  </tr>                             
 
                 </tbody>
               </table>
             
+        </div>
+        <style>
+          .music{
+            position:absolute;
+            bottom:0;
+            width:100%;
+            height:60px;
+          }
+        </style>
+        <div class="col-md-12" class="music">
+          <p >
+            <a class="btn btn-danger" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              JOVEM PAN FM <i class="fa fa-music" aria-hidden="true"></i>
+            </a>
+          </p>
+          <div class="collapse" id="collapseExample">
+            
+              
+              <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+              <script type="text/javascript">
+              MRP.insert({
+              'url':'https://playerservices.streamtheworld.com/api/livestream-redirect/JP_SP_FMAAC.aac',
+              'lang':'pt',
+              'codec':'aac',
+              'volume':65,
+              'autoplay':true,
+              'forceHTML5':true,
+              'jsevents':true,
+              'buffering':1,
+              'title':'Rádio Jovem Pan FM',
+              'welcome':'Seja Bem Vindo',
+              'wmode':'transparent',
+              'skin':'mcclean',
+              'width':180,
+              'height':60
+              });
+              </script>              
+
+            
+          </div>
+
+          <!-- Início Do Código Do Player-->
+<!-- Final-->
         </div>
         <style>
           .card-title{
@@ -114,16 +141,222 @@
           }
           .card{
             border-image: url('/res/site/img/table.jpg') 27 23 / 10px 10px  round ;
+            height: 590px;
           }
-        </style>
-        <div class="col-md-6" >
-          <div class="card" style="width: 100%;margin-top: 200px;">
-            <div class="card-body">
-              <h5 class="card-title">Costela Bovina</h5><hr>
-              <img class="card-img-top"  src="/res/site/img/costela.png">
-              <h5 class="card-price">R$ 29.50</h5>
-            </div>
-          </div>
-        </div>
+          .card-body{
+            transition:  1s;
+          }
+          .promo-title{
+            font-size: 55px;
+            font-family: 'Poppins', sans-serif;
+            border-image: url('/res/site/img/table.jpg') 27 23 / 10px 10px  round ;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            text-shadow: 2px 2px 4px #000000;
+            padding: 4px;
+          }
+        </style>        
+
     </div>
+
 </div>
+
+{if="isset($products)"}
+    {$json = json_encode($products)} 
+{/if}
+{if="isset($promotion)"}
+    {$promot = json_encode($promotion)} 
+{/if}
+{if="isset($categories)"}
+    {$categories = json_encode($categories)} 
+{/if}
+<script>
+
+  var tmp = "{$json}";
+  tmp = tmp.replace(/&quot;/g, "\"");
+  var tmp1 = "{$promot}";
+  tmp1 = tmp1.replace(/&quot;/g, "\"");
+  var catjs = "{$categories}";
+  catjs = catjs.replace(/&quot;/g, "\"");
+
+  var carnes = JSON.parse(tmp);
+  var carnes1 = JSON.parse(tmp1);
+  var categorias = JSON.parse(catjs);
+
+  var final = [];
+  var promo = [];
+  var catfinal = [];
+
+  for(var i = 0; i < carnes.length; i++){
+    final.push(
+      {name:carnes[i]['desproduct'], price:carnes[i]['vlprice'], cat:carnes[i]['idcategory']}
+    )
+  }
+
+  for(var i = 0; i < categorias.length; i++){
+    catfinal.push(
+      {name:categorias[i]['descategory'], id:categorias[i]['idcategory']}
+    )
+  }
+  for(var i = 0; i < carnes1.length; i++){
+    promo.push(
+      {name:carnes1[i]['desproduct'], price:carnes1[i]['vlprice'], category:carnes1[i]['idcategory'], desphoto:carnes1[i]['desphoto'], vlprice:carnes1[i]['vlprice']}
+    )
+  }
+
+    var cont = 0;
+    const quant = promo.length;
+    const title = document.getElementById("promo-title");
+    const img = document.getElementById("promo-img");
+    const price = document.getElementById("promo-price");
+    
+    //promocoes
+    intertest = setInterval(function(){
+      if(cont < quant){  
+        if(promo[cont]['category'] == 1){
+          title.innerText = promo[cont]['name'];// "cont + '-' +quant";
+          img.src = "/res/site/img/" + promo[cont]['desphoto'];
+          price.innerText = 'R$ ' + promo[cont]['vlprice'];
+        }   
+        cont++;    
+      }else{
+        cont = 0;
+        if(promo[cont]['category'] == 1){
+          title.innerText = promo[cont]['name'];// "cont + '-' +quant";
+          img.src = "/res/site/img/" + promo[cont]['desphoto'];
+          price.innerText = 'R$ ' + promo[cont]['vlprice'];
+        }   
+        cont++;
+      }
+    }, 5000);
+
+  // var filtrado = final.filter(function(obj) { return obj.cat == 5; });
+  // console.log(filtrado)
+  
+
+  //categorias
+  const idcattemp = catfinal.map(({id}) => id);
+  const idcat = idcattemp.slice(1);
+  var menoridcat = Math.min(...idcat);
+  //menoridcat = (menoridcat == 1 ) ? menoridcat + 1 : menoridcat;
+  const maioridcat = Math.max(...idcat);
+  
+
+  //produtos por categoria
+  const idcategorias = final.map(({cat}) => cat)
+  var menorcategoria = Math.min(...idcategorias);
+  const maiorcategoria = Math.max(...idcategorias);
+  var filtrado = final.filter(function(obj) { return obj.cat == menorcategoria; });
+  var maxItems = 6;
+  var table = document.getElementsByTagName('tbody')[0];
+  var tableContainer = document.getElementById('products');
+  var tablecat = document.getElementById('table-cat');
+  var activePage = 1;
+  var totalPages = Math.ceil(filtrado.length / maxItems);
+  var myInterval;
+  catnome();
+
+  // insert right arrow
+  var rightArrow = document.createElement('BUTTON');
+  var rightArrowContent = document.createTextNode('NEXT');
+
+  rightArrow.addEventListener('click', function(){
+
+    // check if we got to the last page
+    if (activePage === totalPages) {
+      //automatizar isso
+      var codcat = categoria();
+      filtrado = final.filter(function(obj) { return obj.cat == codcat; });
+      totalPages = Math.ceil(filtrado.length / maxItems);
+      activePage = 1;
+    } else {
+      activePage++;
+    }
+    insertTable();   
+    clearInterval(myInterval);
+    myInterval = setInterval(function(){
+      rightArrow.click();
+    }, 5000);
+  });
+  
+  // automate the switch interval
+  myInterval = setInterval(function(){
+    rightArrow.click();
+  }, 5000);
+
+function categoria(){
+
+  if(menorcategoria < maioridcat){
+
+    for(let cont = 0; idcat.length; cont++){
+
+      if(idcat[cont] > menorcategoria){
+          menorcategoria = idcat[cont];
+          catnome();
+          return menorcategoria;
+      }
+
+    }
+
+  }else if(menorcategoria == maioridcat){
+
+    menorcategoria = menoridcat;
+    catnome();
+    return menorcategoria;
+
+  }
+
+}
+
+function catnome(){
+
+  for(let cont = 0; cont < catfinal.length; cont++){
+
+    if(menorcategoria == catfinal[cont]['id']){
+      tablecat.innerText = catfinal[cont]['name'];
+    }
+
+  }
+
+}
+  
+  function insertTable() {
+
+      var slicedData = filtrado.slice((activePage - 1) * maxItems, activePage * maxItems);
+  
+      // empty the previous table
+      table.innerHTML = '';
+  
+      // insert tr/td's
+      for (var index = 0; index < slicedData.length; index++) {
+      var tableTr = document.createElement('TR'); 
+      tableTr.setAttribute("style", "line-height: 20px;");
+          table.appendChild(tableTr);
+  
+      
+       for (var key in slicedData[index]) {
+
+         if(key != 'cat'){
+         
+          var tableTd = document.createElement('TD');
+          var tdContent = document.createTextNode(slicedData[index][key]);    
+          if(index == 0) {
+            tableTd.className = "first";
+          }
+          if(key == "price"){
+            tableTd.className = "price";
+          }
+              tableTd.appendChild(tdContent);
+              tableTr.appendChild(tableTd);
+         }
+      }
+      
+      }
+  
+
+  }
+  
+  insertTable(filtrado);
+  
+  
+  </script>
