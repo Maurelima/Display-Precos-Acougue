@@ -1,5 +1,5 @@
-# Cardápio Digital
+# Tabela de Preços por Categoria
 
-## Cardápio Digital para o Armazem82
+## Tabela para exibição de preços e promoções utilizando setinterval
 
-![imageshrink](https://github.com/Maurelima/ImageShrink/blob/master/assets/images/image.png)
+![imageshrink](https://github.com/Maurelima/emporio/blob/master/res/site/img/logo/layout.png)
